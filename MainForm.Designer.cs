@@ -36,6 +36,8 @@
             this.btnMerge = new System.Windows.Forms.Button();
             this.btnOutAudio = new System.Windows.Forms.Button();
             this.buttonToMp4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,7 +89,7 @@
             this.btnMerge.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMerge.Enabled = false;
             this.btnMerge.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnMerge.Location = new System.Drawing.Point(493, 379);
+            this.btnMerge.Location = new System.Drawing.Point(360, 379);
             this.btnMerge.Name = "btnMerge";
             this.btnMerge.Size = new System.Drawing.Size(75, 42);
             this.btnMerge.TabIndex = 4;
@@ -99,11 +101,11 @@
             // 
             this.btnOutAudio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOutAudio.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnOutAudio.Location = new System.Drawing.Point(574, 379);
+            this.btnOutAudio.Location = new System.Drawing.Point(441, 379);
             this.btnOutAudio.Name = "btnOutAudio";
-            this.btnOutAudio.Size = new System.Drawing.Size(95, 42);
+            this.btnOutAudio.Size = new System.Drawing.Size(111, 42);
             this.btnOutAudio.TabIndex = 4;
-            this.btnOutAudio.Text = "提取音频";
+            this.btnOutAudio.Text = "视频->MP3";
             this.btnOutAudio.UseVisualStyleBackColor = true;
             this.btnOutAudio.Click += new System.EventHandler(this.btnOutAudio_Click);
             // 
@@ -115,9 +117,33 @@
             this.buttonToMp4.Name = "buttonToMp4";
             this.buttonToMp4.Size = new System.Drawing.Size(113, 42);
             this.buttonToMp4.TabIndex = 4;
-            this.buttonToMp4.Text = "转换为MP4";
+            this.buttonToMp4.Text = "优酷->MP4";
             this.buttonToMp4.UseVisualStyleBackColor = true;
             this.buttonToMp4.Click += new System.EventHandler(this.buttonToMp4_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Location = new System.Drawing.Point(558, 379);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(111, 42);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "M4A->MP3";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button3.Location = new System.Drawing.Point(279, 379);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 42);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "截取";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
@@ -125,8 +151,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button2);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.btnMerge);
             this.Controls.Add(this.buttonToMp4);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnOutAudio);
             this.Controls.Add(this.listBoxFiles);
             this.Controls.Add(this.statusStrip1);
@@ -149,6 +177,8 @@
         private System.Windows.Forms.Button btnMerge;
         private System.Windows.Forms.Button btnOutAudio;
         private System.Windows.Forms.Button buttonToMp4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
     }
 }
 

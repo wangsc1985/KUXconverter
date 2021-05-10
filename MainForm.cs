@@ -179,5 +179,70 @@ namespace KUXconverter
             })).Start();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new Thread(new ThreadStart(() =>
+            {
+                if (listBoxFiles.Items.Count > 0)
+                {
+                    var ext = Path.GetExtension(listBoxFiles.Items[0].ToString());
+                    for (int i = 0; i < listBoxFiles.Items.Count; i++)
+                    {
+                        var source = listBoxFiles.Items[i].ToString();
+                        if (source.EndsWith(".m4a"))
+                        {
+                        var target = $"{ source.Replace(ext, "") }.mp3";
+                        this.Invoke((EventHandler)delegate
+                        {
+                            textStatus.Text = $"正在将{Path.GetFileName(source)}转化为MP3…";
+                        });
+                        var ccc = new Cmd();
+                        var cmd = $" -y -i \"{source}\"  -threads 2 \"{target}\"";
+                        ccc.RunCmd(cmd);
+                        }
+
+                    }
+                    this.Invoke((EventHandler)delegate
+                    {
+                        textStatus.Text = "";
+                        MessageBox.Show("全部转化完毕！");
+                    });
+                }
+            })).Start();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new Thread(new ThreadStart(() =>
+            {
+                if (listBoxFiles.Items.Count > 0)
+                {
+                    var ext = Path.GetExtension(listBoxFiles.Items[0].ToString());
+                    for (int i = 0; i < listBoxFiles.Items.Count; i++)
+                    {
+                        var source = listBoxFiles.Items[i].ToString();
+                        if (source.EndsWith(".mp3"))
+                        {
+                            var fi = new FileInfo(source);
+                            var target = $"{fi.Directory}\\截取\\{fi.Name}";
+                            this.Invoke((EventHandler)delegate
+                            {
+                                textStatus.Text = $"正在截取{Path.GetFileName(source)}…";
+                            });
+                            var ccc = new Cmd();
+                            //ffmpeg.exe - i  audio提取版.mp3 - ss 00:00:00 - t  00:01:00  audio截取版.mp3
+                             var cmd = $" -y  -i \"{source}\" - ss 00:00:08  -threads 2 \"{target}\"";
+                            ccc.RunCmd(cmd);
+                        }
+
+                    }
+                    this.Invoke((EventHandler)delegate
+                    {
+                        textStatus.Text = "";
+                        MessageBox.Show("全部截取完毕！");
+                    });
+                }
+            })).Start();
+        }
     }
 }
